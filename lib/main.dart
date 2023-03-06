@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: new ThemeData(scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Login Screen'),
@@ -18,29 +19,35 @@ class MyApp extends StatelessWidget {
         body: ListView(children: <Widget>[
           Container(
             padding: EdgeInsets.all(15),
-            child: Image.asset('assets/images/file-name.jpg'),
+            child: Image.asset('assets/images/logo_upn.png'),
           ),
           Container(
               padding: EdgeInsets.all(15),
               child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
                   hintText: 'Email',
+                  fillColor: Colors.white70,
                 ),
               )),
           Container(
               padding: EdgeInsets.all(15),
               child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
                   hintText: 'Password',
+                  fillColor: Colors.white70,
                 ),
               )),
           Container(
               padding: EdgeInsets.all(20),
               child: ElevatedButton(
                 onPressed: () {}, // Respon ketika button ditekan
-                child: Text("Login"),
+                child: Text("Login", style: TextStyle(fontSize: 20)),
               )),
           Container(
               padding: EdgeInsets.all(15), child: Text('Forgot Password?')),
