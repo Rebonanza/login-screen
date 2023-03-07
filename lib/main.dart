@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: new ThemeData(scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Login Screen'),
@@ -19,10 +19,12 @@ class MyApp extends StatelessWidget {
         body: ListView(children: <Widget>[
           Container(
             padding: EdgeInsets.all(15),
-            child: Image.asset('assets/images/logo_upn.png'),
+            margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            child: Image.asset('assets/images/logo_upn.png',
+                height: 80, width: 80),
           ),
           Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.fromLTRB(20, 15, 20, 0),
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
                 ),
               )),
           Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.fromLTRB(20, 15, 20, 0),
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -44,13 +46,16 @@ class MyApp extends StatelessWidget {
                 ),
               )),
           Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.fromLTRB(20, 25, 20, 0),
               child: ElevatedButton(
                 onPressed: () {}, // Respon ketika button ditekan
-                child: Text("Login", style: TextStyle(fontSize: 20)),
+                child: Text("Log in", style: TextStyle(fontSize: 20)),
               )),
           Container(
-              padding: EdgeInsets.all(15), child: Text('Forgot Password?')),
+              padding: EdgeInsets.all(5),
+              child: Center(
+                child: Text('Forgot Password?'),
+              )),
         ]),
       ),
     );
